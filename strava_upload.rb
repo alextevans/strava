@@ -21,15 +21,16 @@ def upload_the_file file_name
       form.password = @params["password"]
     end.submit
 
-    #go to the upload page
-    upload_page = agent.click(my_page.link_with(:class => /upload alt button/))
-    #go to the basic upload form
-    file_upload_page = agent.click(upload_page.link_with(:text => /Upload files directly from your computer/))
-    # Upload the file
-    file_upload_page.form_with(:method => 'POST') do |upload_form|
-      upload_form.file_uploads.first.file_name = file_name
-    end.submit
+    ##go to the upload page
+    #upload_page = agent.click(my_page.link_with(:class => /upload alt button/))
+    ##go to the basic upload form
+    #file_upload_page = agent.click(upload_page.link_with(:text => /Upload files directly from your computer/))
+    ## Upload the file
+    #file_upload_page.form_with(:method => 'POST') do |upload_form|
+    #  upload_form.file_uploads.first.file_name = file_name
+    #end.submit
   end
+  sleep 1
   puts "finished uploading " + file_name
 end
 
