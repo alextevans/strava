@@ -4,7 +4,7 @@ require 'mechanize'
 
 abort "Usage: #{$0} <path_to_configuration_file>" if (ARGV.size != 2)
 @configuration_file = File.read(ARGV[0]).split
-@params = {"email" => @configuration_file[0], "password" => @configuration_file[1], "data_path"=> @configuration_file[2] "access_token"=> @configuration_file[3]}
+@params = {"email" => @configuration_file[0], "password" => @configuration_file[1], "data_path"=> @configuration_file[2], "access_token"=> @configuration_file[3]}
 
 @p=[]
 access_token = ""
@@ -24,7 +24,7 @@ def upload_using_api files
   files.each do |i|
     c = command.gsub(/%/, i)
     puts "\n\n" + c
-    #system(c)
+    system(c)
   end
 end
 
